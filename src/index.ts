@@ -122,9 +122,9 @@ export class SetuAaSDK extends Core.APIClient {
   }
 
   users: API.Users = new API.Users(this);
-  fipsV2: API.FipsV2 = new API.FipsV2(this);
-  consentsV2: API.ConsentsV2 = new API.ConsentsV2(this);
-  sessionsV2: API.SessionsV2 = new API.SessionsV2(this);
+  fips: API.Fips = new API.Fips(this);
+  consents: API.Consents = new API.Consents(this);
+  sessions: API.Sessions = new API.Sessions(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -184,21 +184,21 @@ export namespace SetuAaSDK {
   export import TokenAPIResponse = API.TokenAPIResponse;
   export import UserLoginParams = API.UserLoginParams;
 
-  export import FipsV2 = API.FipsV2;
+  export import Fips = API.Fips;
   export import FipResponse = API.FipResponse;
 
-  export import ConsentsV2 = API.ConsentsV2;
+  export import Consents = API.Consents;
   export import ConsentResponseV2 = API.ConsentResponseV2;
   export import RevokeConsentResponse = API.RevokeConsentResponse;
-  export import ConsentsV2CreateParams = API.ConsentsV2CreateParams;
-  export import ConsentsV2RetrieveParams = API.ConsentsV2RetrieveParams;
-  export import ConsentsV2FetchStatusParams = API.ConsentsV2FetchStatusParams;
-  export import ConsentsV2RevokeParams = API.ConsentsV2RevokeParams;
+  export import ConsentCreateParams = API.ConsentCreateParams;
+  export import ConsentRetrieveParams = API.ConsentRetrieveParams;
+  export import ConsentFetchStatusParams = API.ConsentFetchStatusParams;
+  export import ConsentRevokeParams = API.ConsentRevokeParams;
 
-  export import SessionsV2 = API.SessionsV2;
+  export import Sessions = API.Sessions;
   export import FiDataFetchResponseV2 = API.FiDataFetchResponseV2;
-  export import SessionsV2CreateParams = API.SessionsV2CreateParams;
-  export import SessionsV2RetrieveParams = API.SessionsV2RetrieveParams;
+  export import SessionCreateParams = API.SessionCreateParams;
+  export import SessionRetrieveParams = API.SessionRetrieveParams;
 }
 
 export default SetuAaSDK;
