@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/setu-aa-sdk-node.git
+npm install git+ssh://git@github.com:anmolm96/setu-aa-sdk.git
 ```
 
 > [!NOTE]
@@ -235,7 +235,7 @@ import SetuAaSDK from 'setu-aa-sdk';
 ```
 
 To do the inverse, add `import "setu-aa-sdk/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/setu-aa-sdk-node/tree/main/src/_shims#readme)).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/anmolm96/setu-aa-sdk/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
 
@@ -294,7 +294,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/setu-aa-sdk-node/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/anmolm96/setu-aa-sdk/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
