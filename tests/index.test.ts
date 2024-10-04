@@ -154,11 +154,11 @@ describe('instantiate client', () => {
     test('env variable with environment', () => {
       process.env['SETU_AA_SDK_BASE_URL'] = 'https://example.com/from_env';
 
-      expect(() => new SetuAaSDK({ environment: 'production' })).toThrowErrorMatchingInlineSnapshot(
+      expect(() => new SetuAaSDK({ environment: 'sandbox' })).toThrowErrorMatchingInlineSnapshot(
         `"Ambiguous URL; The \`baseURL\` option (or SETU_AA_SDK_BASE_URL env var) and the \`environment\` option are given. If you want to use the environment you must pass baseURL: null"`,
       );
 
-      const client = new SetuAaSDK({ baseURL: null, environment: 'production' });
+      const client = new SetuAaSDK({ baseURL: null, environment: 'sandbox' });
       expect(client.baseURL).toEqual('https://fiu-sandbox.setu.co/');
     });
   });

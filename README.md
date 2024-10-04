@@ -26,7 +26,7 @@ The full API of this library can be found in [api.md](api.md).
 import SetuAaSDK from 'setu-aa-sdk';
 
 const client = new SetuAaSDK({
-  environment: 'environment_1', // defaults to 'production'
+  environment: 'production', // defaults to 'sandbox'
 });
 
 async function main() {
@@ -52,7 +52,7 @@ This library includes TypeScript definitions for all request params and response
 import SetuAaSDK from 'setu-aa-sdk';
 
 const client = new SetuAaSDK({
-  environment: 'environment_1', // defaults to 'production'
+  environment: 'production', // defaults to 'sandbox'
 });
 
 async function main() {

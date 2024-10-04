@@ -7,8 +7,8 @@ import * as Core from './core';
 import * as API from './resources/index';
 
 const environments = {
-  production: 'https://fiu-sandbox.setu.co/',
-  environment_1: 'https://fiu.setu.co',
+  sandbox: 'https://fiu-sandbox.setu.co/',
+  production: 'https://fiu.setu.co',
 };
 type Environment = keyof typeof environments;
 
@@ -17,8 +17,8 @@ export interface ClientOptions {
    * Specifies the environment to use for the API.
    *
    * Each environment maps to a different base URL:
-   * - `production` corresponds to `https://fiu-sandbox.setu.co/`
-   * - `environment_1` corresponds to `https://fiu.setu.co`
+   * - `sandbox` corresponds to `https://fiu-sandbox.setu.co/`
+   * - `production` corresponds to `https://fiu.setu.co`
    */
   environment?: Environment;
 
@@ -88,7 +88,7 @@ export class SetuAaSDK extends Core.APIClient {
   /**
    * API Client for interfacing with the Setu Aa SDK API.
    *
-   * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
+   * @param {Environment} [opts.environment=sandbox] - Specifies the environment URL to use for the API.
    * @param {string} [opts.baseURL=process.env['SETU_AA_SDK_BASE_URL'] ?? https://fiu-sandbox.setu.co/] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
@@ -101,7 +101,7 @@ export class SetuAaSDK extends Core.APIClient {
     const options: ClientOptions = {
       ...opts,
       baseURL,
-      environment: opts.environment ?? 'production',
+      environment: opts.environment ?? 'sandbox',
     };
 
     if (baseURL && opts.environment) {
@@ -111,7 +111,7 @@ export class SetuAaSDK extends Core.APIClient {
     }
 
     super({
-      baseURL: options.baseURL || environments[options.environment || 'production'],
+      baseURL: options.baseURL || environments[options.environment || 'sandbox'],
       timeout: options.timeout ?? 60000 /* 1 minute */,
       httpAgent: options.httpAgent,
       maxRetries: options.maxRetries,
