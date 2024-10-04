@@ -2,16 +2,13 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as SessionsV2API from './sessions-v2';
+import * as SessionsAPI from './sessions';
 
-export class SessionsV2 extends APIResource {
+export class Sessions extends APIResource {
   /**
    * This API is used to initiate a data fetch for FI data.
    */
-  create(
-    params: SessionsV2CreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<FiDataFetchResponseV2> {
+  create(params: SessionCreateParams, options?: Core.RequestOptions): Core.APIPromise<FiDataFetchResponseV2> {
     const { Authorization, 'x-product-instance-id': xProductInstanceId, ...body } = params;
     return this._client.post('/v2/sessions', {
       body,
@@ -29,7 +26,7 @@ export class SessionsV2 extends APIResource {
    */
   retrieve(
     sessionId: string,
-    params: SessionsV2RetrieveParams,
+    params: SessionRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FiDataFetchResponseV2> {
     const { Authorization, 'x-product-instance-id': xProductInstanceId } = params;
@@ -2039,7 +2036,7 @@ export namespace FiDataFetchResponseV2 {
   }
 }
 
-export interface SessionsV2CreateParams {
+export interface SessionCreateParams {
   /**
    * Body param: The request identifier to fetch the status and data.
    */
@@ -2049,7 +2046,7 @@ export interface SessionsV2CreateParams {
    * Body param: Time range for which the data is being requested (should be
    * inclusive of the consent's FIDataRange)
    */
-  dataRange: SessionsV2CreateParams.DataRange;
+  dataRange: SessionCreateParams.DataRange;
 
   /**
    * Body param: Format of decrypted data
@@ -2067,7 +2064,7 @@ export interface SessionsV2CreateParams {
   'x-product-instance-id': string;
 }
 
-export namespace SessionsV2CreateParams {
+export namespace SessionCreateParams {
   /**
    * Time range for which the data is being requested (should be inclusive of the
    * consent's FIDataRange)
@@ -2089,7 +2086,7 @@ export namespace SessionsV2CreateParams {
   }
 }
 
-export interface SessionsV2RetrieveParams {
+export interface SessionRetrieveParams {
   /**
    * Authorization Bearer token
    */
@@ -2101,8 +2098,8 @@ export interface SessionsV2RetrieveParams {
   'x-product-instance-id': string;
 }
 
-export namespace SessionsV2 {
-  export import FiDataFetchResponseV2 = SessionsV2API.FiDataFetchResponseV2;
-  export import SessionsV2CreateParams = SessionsV2API.SessionsV2CreateParams;
-  export import SessionsV2RetrieveParams = SessionsV2API.SessionsV2RetrieveParams;
+export namespace Sessions {
+  export import FiDataFetchResponseV2 = SessionsAPI.FiDataFetchResponseV2;
+  export import SessionCreateParams = SessionsAPI.SessionCreateParams;
+  export import SessionRetrieveParams = SessionsAPI.SessionRetrieveParams;
 }

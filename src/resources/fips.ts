@@ -2,9 +2,9 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as FipsV2API from './fips-v2';
+import * as FipsAPI from './fips';
 
-export class FipsV2 extends APIResource {
+export class Fips extends APIResource {
   /**
    * This API is used to get the list of FIPs.
    */
@@ -73,6 +73,6 @@ export namespace FipResponse {
   }
 }
 
-export namespace FipsV2 {
-  export import FipResponse = FipsV2API.FipResponse;
+export namespace Fips {
+  export import FipResponse = FipsAPI.FipResponse;
 }

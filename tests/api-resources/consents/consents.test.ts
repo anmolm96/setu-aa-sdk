@@ -5,9 +5,9 @@ import { Response } from 'node-fetch';
 
 const client = new SetuAaSDK({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
 
-describe('resource consentsV2', () => {
+describe('resource consents', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.consentsV2.create({
+    const responsePromise = client.consents.create({
       dataRange: { from: '2019-12-27T18:11:19.117Z', to: '2019-12-27T18:11:19.117Z' },
       vua: 'vua',
       Authorization: 'Authorization',
@@ -23,7 +23,7 @@ describe('resource consentsV2', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.consentsV2.create({
+    const response = await client.consents.create({
       dataRange: { from: '2019-12-27T18:11:19.117Z', to: '2019-12-27T18:11:19.117Z' },
       vua: 'vua',
       Authorization: 'Authorization',
@@ -53,7 +53,7 @@ describe('resource consentsV2', () => {
   });
 
   test('retrieve: only required params', async () => {
-    const responsePromise = client.consentsV2.retrieve('x', {
+    const responsePromise = client.consents.retrieve('x', {
       Authorization: 'Authorization',
       'x-product-instance-id': 'x',
     });
@@ -67,7 +67,7 @@ describe('resource consentsV2', () => {
   });
 
   test('retrieve: required and optional params', async () => {
-    const response = await client.consentsV2.retrieve('x', {
+    const response = await client.consents.retrieve('x', {
       Authorization: 'Authorization',
       'x-product-instance-id': 'x',
       expanded: true,
@@ -75,7 +75,7 @@ describe('resource consentsV2', () => {
   });
 
   test('fetchStatus: only required params', async () => {
-    const responsePromise = client.consentsV2.fetchStatus('x', {
+    const responsePromise = client.consents.fetchStatus('x', {
       Authorization: 'Authorization',
       'x-product-instance-id': 'x',
     });
@@ -89,14 +89,14 @@ describe('resource consentsV2', () => {
   });
 
   test('fetchStatus: required and optional params', async () => {
-    const response = await client.consentsV2.fetchStatus('x', {
+    const response = await client.consents.fetchStatus('x', {
       Authorization: 'Authorization',
       'x-product-instance-id': 'x',
     });
   });
 
   test('revoke: only required params', async () => {
-    const responsePromise = client.consentsV2.revoke('x', {
+    const responsePromise = client.consents.revoke('x', {
       Authorization: 'Authorization',
       'x-product-instance-id': 'x',
     });
@@ -110,7 +110,7 @@ describe('resource consentsV2', () => {
   });
 
   test('revoke: required and optional params', async () => {
-    const response = await client.consentsV2.revoke('x', {
+    const response = await client.consents.revoke('x', {
       Authorization: 'Authorization',
       'x-product-instance-id': 'x',
     });

@@ -2,10 +2,10 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ConsentsV2API from './consents-v2';
+import * as ConsentsAPI from './consents';
 import * as CollectionAPI from './collection';
 
-export class ConsentsV2 extends APIResource {
+export class Consents extends APIResource {
   collection: CollectionAPI.Collection = new CollectionAPI.Collection(this._client);
 
   /**
@@ -19,7 +19,7 @@ export class ConsentsV2 extends APIResource {
    * Note: “Request Body Example Value” and “Responses Example Value” given below is
    * for illustrative purposes only.
    */
-  create(params: ConsentsV2CreateParams, options?: Core.RequestOptions): Core.APIPromise<ConsentResponseV2> {
+  create(params: ConsentCreateParams, options?: Core.RequestOptions): Core.APIPromise<ConsentResponseV2> {
     const { Authorization, 'x-product-instance-id': xProductInstanceId, ...body } = params;
     return this._client.post('/v2/consents', {
       body,
@@ -37,7 +37,7 @@ export class ConsentsV2 extends APIResource {
    */
   retrieve(
     requestId: string,
-    params: ConsentsV2RetrieveParams,
+    params: ConsentRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ConsentResponseV2> {
     const { Authorization, 'x-product-instance-id': xProductInstanceId, ...query } = params;
@@ -57,7 +57,7 @@ export class ConsentsV2 extends APIResource {
    */
   fetchStatus(
     consentId: string,
-    params: ConsentsV2FetchStatusParams,
+    params: ConsentFetchStatusParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     const { Authorization, 'x-product-instance-id': xProductInstanceId } = params;
@@ -77,7 +77,7 @@ export class ConsentsV2 extends APIResource {
    */
   revoke(
     requestId: string,
-    params: ConsentsV2RevokeParams,
+    params: ConsentRevokeParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<RevokeConsentResponse> {
     const { Authorization, 'x-product-instance-id': xProductInstanceId } = params;
@@ -391,11 +391,11 @@ export interface RevokeConsentResponse {
   status: 'PENDING' | 'ACTIVE' | 'PAUSED' | 'REVOKED' | 'EXPIRED' | 'REJECTED';
 }
 
-export interface ConsentsV2CreateParams {
+export interface ConsentCreateParams {
   /**
    * Body param:
    */
-  dataRange: ConsentsV2CreateParams.DataRange;
+  dataRange: ConsentCreateParams.DataRange;
 
   /**
    * Body param:
@@ -415,12 +415,12 @@ export interface ConsentsV2CreateParams {
   /**
    * Body param:
    */
-  consentDateRange?: ConsentsV2CreateParams.ConsentDateRange;
+  consentDateRange?: ConsentCreateParams.ConsentDateRange;
 
   /**
    * Body param: How long consumer is allowed to store data
    */
-  consentDuration?: ConsentsV2CreateParams.ConsentDuration;
+  consentDuration?: ConsentCreateParams.ConsentDuration;
 
   /**
    * Body param: Consent Mode as defined in the AA Technical Specification
@@ -435,17 +435,17 @@ export interface ConsentsV2CreateParams {
   /**
    * Body param:
    */
-  context?: Array<ConsentsV2CreateParams.Context>;
+  context?: Array<ConsentCreateParams.Context>;
 
   /**
    * Body param: rules that will be utilized by FIP to filter the data
    */
-  dataFilter?: Array<ConsentsV2CreateParams.DataFilter>;
+  dataFilter?: Array<ConsentCreateParams.DataFilter>;
 
   /**
    * Body param: How long consumer is allowed to store data
    */
-  dataLife?: ConsentsV2CreateParams.DataLife;
+  dataLife?: ConsentCreateParams.DataLife;
 
   /**
    * Body param:
@@ -484,7 +484,7 @@ export interface ConsentsV2CreateParams {
    * is 1 request per HOUR. Similaraly it will be 24 requests per DAY and so on.
    * Frequency can not be set below 1 request per hour.
    */
-  frequency?: ConsentsV2CreateParams.Frequency;
+  frequency?: ConsentCreateParams.Frequency;
 
   /**
    * Body param:
@@ -494,7 +494,7 @@ export interface ConsentsV2CreateParams {
   /**
    * Body param: Purpose of the consent defined in the AA Technical Specification
    */
-  purpose?: ConsentsV2CreateParams.Purpose;
+  purpose?: ConsentCreateParams.Purpose;
 
   /**
    * Body param:
@@ -502,7 +502,7 @@ export interface ConsentsV2CreateParams {
   redirectUrl?: string;
 }
 
-export namespace ConsentsV2CreateParams {
+export namespace ConsentCreateParams {
   export interface DataRange {
     /**
      * Start date for financial information
@@ -649,7 +649,7 @@ export namespace ConsentsV2CreateParams {
   }
 }
 
-export interface ConsentsV2RetrieveParams {
+export interface ConsentRetrieveParams {
   /**
    * Header param: Authorization Bearer token
    */
@@ -666,7 +666,7 @@ export interface ConsentsV2RetrieveParams {
   expanded?: boolean;
 }
 
-export interface ConsentsV2FetchStatusParams {
+export interface ConsentFetchStatusParams {
   /**
    * Authorization Bearer token
    */
@@ -678,7 +678,7 @@ export interface ConsentsV2FetchStatusParams {
   'x-product-instance-id': string;
 }
 
-export interface ConsentsV2RevokeParams {
+export interface ConsentRevokeParams {
   /**
    * Authorization Bearer token
    */
@@ -690,13 +690,13 @@ export interface ConsentsV2RevokeParams {
   'x-product-instance-id': string;
 }
 
-export namespace ConsentsV2 {
-  export import ConsentResponseV2 = ConsentsV2API.ConsentResponseV2;
-  export import RevokeConsentResponse = ConsentsV2API.RevokeConsentResponse;
-  export import ConsentsV2CreateParams = ConsentsV2API.ConsentsV2CreateParams;
-  export import ConsentsV2RetrieveParams = ConsentsV2API.ConsentsV2RetrieveParams;
-  export import ConsentsV2FetchStatusParams = ConsentsV2API.ConsentsV2FetchStatusParams;
-  export import ConsentsV2RevokeParams = ConsentsV2API.ConsentsV2RevokeParams;
+export namespace Consents {
+  export import ConsentResponseV2 = ConsentsAPI.ConsentResponseV2;
+  export import RevokeConsentResponse = ConsentsAPI.RevokeConsentResponse;
+  export import ConsentCreateParams = ConsentsAPI.ConsentCreateParams;
+  export import ConsentRetrieveParams = ConsentsAPI.ConsentRetrieveParams;
+  export import ConsentFetchStatusParams = ConsentsAPI.ConsentFetchStatusParams;
+  export import ConsentRevokeParams = ConsentsAPI.ConsentRevokeParams;
   export import Collection = CollectionAPI.Collection;
   export import MultiConsentResponse = CollectionAPI.MultiConsentResponse;
   export import CollectionCreateParams = CollectionAPI.CollectionCreateParams;
