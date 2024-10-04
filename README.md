@@ -11,11 +11,8 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:anmolm96/setu-aa-sdk.git
+npm install setu-aa-sdk
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install setu-aa-sdk`
 
 ## Usage
 
