@@ -74,5 +74,5 @@ export namespace FipResponse {
 }
 
 export namespace Fips {
-  export import FipResponse = FipsAPI.FipResponse;
+  export type FipResponse = FipsAPI.FipResponse;
 }
