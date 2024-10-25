@@ -178,27 +178,27 @@ export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
 export namespace SetuAaSDK {
-  export import RequestOptions = Core.RequestOptions;
+  export type RequestOptions = Core.RequestOptions;
 
   export import Users = API.Users;
-  export import TokenAPIResponse = API.TokenAPIResponse;
-  export import UserLoginParams = API.UserLoginParams;
+  export type TokenAPIResponse = API.TokenAPIResponse;
+  export type UserLoginParams = API.UserLoginParams;
 
   export import Fips = API.Fips;
-  export import FipResponse = API.FipResponse;
+  export type FipResponse = API.FipResponse;
 
   export import Consents = API.Consents;
-  export import ConsentResponseV2 = API.ConsentResponseV2;
-  export import RevokeConsentResponse = API.RevokeConsentResponse;
-  export import ConsentCreateParams = API.ConsentCreateParams;
-  export import ConsentRetrieveParams = API.ConsentRetrieveParams;
-  export import ConsentFetchStatusParams = API.ConsentFetchStatusParams;
-  export import ConsentRevokeParams = API.ConsentRevokeParams;
+  export type ConsentResponseV2 = API.ConsentResponseV2;
+  export type RevokeConsentResponse = API.RevokeConsentResponse;
+  export type ConsentCreateParams = API.ConsentCreateParams;
+  export type ConsentRetrieveParams = API.ConsentRetrieveParams;
+  export type ConsentFetchStatusParams = API.ConsentFetchStatusParams;
+  export type ConsentRevokeParams = API.ConsentRevokeParams;
 
   export import Sessions = API.Sessions;
-  export import FiDataFetchResponseV2 = API.FiDataFetchResponseV2;
-  export import SessionCreateParams = API.SessionCreateParams;
-  export import SessionRetrieveParams = API.SessionRetrieveParams;
+  export type FiDataFetchResponseV2 = API.FiDataFetchResponseV2;
+  export type SessionCreateParams = API.SessionCreateParams;
+  export type SessionRetrieveParams = API.SessionRetrieveParams;
 }
 
 export default SetuAaSDK;
