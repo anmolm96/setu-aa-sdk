@@ -53,6 +53,6 @@ export interface UserLoginParams {
 }
 
 export namespace Users {
-  export type TokenAPIResponse = UsersAPI.TokenAPIResponse;
-  export type UserLoginParams = UsersAPI.UserLoginParams;
+  export import TokenAPIResponse = UsersAPI.TokenAPIResponse;
+  export import UserLoginParams = UsersAPI.UserLoginParams;
 }

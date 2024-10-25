@@ -90,7 +90,7 @@ export interface CollectionRetrieveParams {
 }
 
 export namespace Collection {
-  export type MultiConsentResponse = CollectionAPI.MultiConsentResponse;
-  export type CollectionCreateParams = CollectionAPI.CollectionCreateParams;
-  export type CollectionRetrieveParams = CollectionAPI.CollectionRetrieveParams;
+  export import MultiConsentResponse = CollectionAPI.MultiConsentResponse;
+  export import CollectionCreateParams = CollectionAPI.CollectionCreateParams;
+  export import CollectionRetrieveParams = CollectionAPI.CollectionRetrieveParams;
 }
