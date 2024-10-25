@@ -2099,7 +2099,7 @@ export interface SessionRetrieveParams {
 }
 
 export namespace Sessions {
-  export import FiDataFetchResponseV2 = SessionsAPI.FiDataFetchResponseV2;
-  export import SessionCreateParams = SessionsAPI.SessionCreateParams;
-  export import SessionRetrieveParams = SessionsAPI.SessionRetrieveParams;
+  export type FiDataFetchResponseV2 = SessionsAPI.FiDataFetchResponseV2;
+  export type SessionCreateParams = SessionsAPI.SessionCreateParams;
+  export type SessionRetrieveParams = SessionsAPI.SessionRetrieveParams;
 }
