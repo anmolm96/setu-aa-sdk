@@ -691,14 +691,14 @@ export interface ConsentRevokeParams {
 }
 
 export namespace Consents {
-  export type ConsentResponseV2 = ConsentsAPI.ConsentResponseV2;
-  export type RevokeConsentResponse = ConsentsAPI.RevokeConsentResponse;
-  export type ConsentCreateParams = ConsentsAPI.ConsentCreateParams;
-  export type ConsentRetrieveParams = ConsentsAPI.ConsentRetrieveParams;
-  export type ConsentFetchStatusParams = ConsentsAPI.ConsentFetchStatusParams;
-  export type ConsentRevokeParams = ConsentsAPI.ConsentRevokeParams;
+  export import ConsentResponseV2 = ConsentsAPI.ConsentResponseV2;
+  export import RevokeConsentResponse = ConsentsAPI.RevokeConsentResponse;
+  export import ConsentCreateParams = ConsentsAPI.ConsentCreateParams;
+  export import ConsentRetrieveParams = ConsentsAPI.ConsentRetrieveParams;
+  export import ConsentFetchStatusParams = ConsentsAPI.ConsentFetchStatusParams;
+  export import ConsentRevokeParams = ConsentsAPI.ConsentRevokeParams;
   export import Collection = CollectionAPI.Collection;
-  export type MultiConsentResponse = CollectionAPI.MultiConsentResponse;
-  export type CollectionCreateParams = CollectionAPI.CollectionCreateParams;
-  export type CollectionRetrieveParams = CollectionAPI.CollectionRetrieveParams;
+  export import MultiConsentResponse = CollectionAPI.MultiConsentResponse;
+  export import CollectionCreateParams = CollectionAPI.CollectionCreateParams;
+  export import CollectionRetrieveParams = CollectionAPI.CollectionRetrieveParams;
 }
