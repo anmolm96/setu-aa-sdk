@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as FipsAPI from './fips';
 
 export class Fips extends APIResource {
   /**
@@ -73,6 +72,6 @@ export namespace FipResponse {
   }
 }
 
-export namespace Fips {
-  export import FipResponse = FipsAPI.FipResponse;
+export declare namespace Fips {
+  export { type FipResponse as FipResponse };
 }
