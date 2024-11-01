@@ -1,17 +1,17 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
-  ConsentResponseV2,
-  RevokeConsentResponse,
-  ConsentCreateParams,
-  ConsentRetrieveParams,
-  ConsentFetchStatusParams,
-  ConsentRevokeParams,
-  Consents,
-} from './consents';
-export {
-  MultiConsentResponse,
-  CollectionCreateParams,
-  CollectionRetrieveParams,
   Collection,
+  type MultiConsentResponse,
+  type CollectionCreateParams,
+  type CollectionRetrieveParams,
 } from './collection';
+export {
+  Consents,
+  type ConsentResponseV2,
+  type RevokeConsentResponse,
+  type ConsentCreateParams,
+  type ConsentRetrieveParams,
+  type ConsentFetchStatusParams,
+  type ConsentRevokeParams,
+} from './consents';

@@ -1,10 +1,27 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Errors from './error';
-import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
 import * as Core from './core';
+import * as Errors from './error';
+import * as Uploads from './uploads';
 import * as API from './resources/index';
+import { FipResponse, Fips } from './resources/fips';
+import {
+  FiDataFetchResponseV2,
+  SessionCreateParams,
+  SessionRetrieveParams,
+  Sessions,
+} from './resources/sessions';
+import { TokenAPIResponse, UserLoginParams, Users } from './resources/users';
+import {
+  ConsentCreateParams,
+  ConsentFetchStatusParams,
+  ConsentResponseV2,
+  ConsentRetrieveParams,
+  ConsentRevokeParams,
+  Consents,
+  RevokeConsentResponse,
+} from './resources/consents/consents';
 
 const environments = {
   sandbox: 'https://fiu-sandbox.setu.co/',
@@ -158,7 +175,7 @@ export class SetuAaSDK extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
+export {
   SetuAaSDKError,
   APIError,
   APIConnectionError,
@@ -172,33 +189,43 @@ export const {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} = Errors;
+} from './error';
 
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
-export namespace SetuAaSDK {
-  export import RequestOptions = Core.RequestOptions;
+SetuAaSDK.Users = Users;
+SetuAaSDK.Fips = Fips;
+SetuAaSDK.Consents = Consents;
+SetuAaSDK.Sessions = Sessions;
 
-  export import Users = API.Users;
-  export import TokenAPIResponse = API.TokenAPIResponse;
-  export import UserLoginParams = API.UserLoginParams;
+export declare namespace SetuAaSDK {
+  export type RequestOptions = Core.RequestOptions;
 
-  export import Fips = API.Fips;
-  export import FipResponse = API.FipResponse;
+  export {
+    Users as Users,
+    type TokenAPIResponse as TokenAPIResponse,
+    type UserLoginParams as UserLoginParams,
+  };
 
-  export import Consents = API.Consents;
-  export import ConsentResponseV2 = API.ConsentResponseV2;
-  export import RevokeConsentResponse = API.RevokeConsentResponse;
-  export import ConsentCreateParams = API.ConsentCreateParams;
-  export import ConsentRetrieveParams = API.ConsentRetrieveParams;
-  export import ConsentFetchStatusParams = API.ConsentFetchStatusParams;
-  export import ConsentRevokeParams = API.ConsentRevokeParams;
+  export { Fips as Fips, type FipResponse as FipResponse };
 
-  export import Sessions = API.Sessions;
-  export import FiDataFetchResponseV2 = API.FiDataFetchResponseV2;
-  export import SessionCreateParams = API.SessionCreateParams;
-  export import SessionRetrieveParams = API.SessionRetrieveParams;
+  export {
+    Consents as Consents,
+    type ConsentResponseV2 as ConsentResponseV2,
+    type RevokeConsentResponse as RevokeConsentResponse,
+    type ConsentCreateParams as ConsentCreateParams,
+    type ConsentRetrieveParams as ConsentRetrieveParams,
+    type ConsentFetchStatusParams as ConsentFetchStatusParams,
+    type ConsentRevokeParams as ConsentRevokeParams,
+  };
+
+  export {
+    Sessions as Sessions,
+    type FiDataFetchResponseV2 as FiDataFetchResponseV2,
+    type SessionCreateParams as SessionCreateParams,
+    type SessionRetrieveParams as SessionRetrieveParams,
+  };
 }
 
 export default SetuAaSDK;

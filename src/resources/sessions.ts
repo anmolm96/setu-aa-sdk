@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as SessionsAPI from './sessions';
 
 export class Sessions extends APIResource {
   /**
@@ -2098,8 +2097,10 @@ export interface SessionRetrieveParams {
   'x-product-instance-id': string;
 }
 
-export namespace Sessions {
-  export import FiDataFetchResponseV2 = SessionsAPI.FiDataFetchResponseV2;
-  export import SessionCreateParams = SessionsAPI.SessionCreateParams;
-  export import SessionRetrieveParams = SessionsAPI.SessionRetrieveParams;
+export declare namespace Sessions {
+  export {
+    type FiDataFetchResponseV2 as FiDataFetchResponseV2,
+    type SessionCreateParams as SessionCreateParams,
+    type SessionRetrieveParams as SessionRetrieveParams,
+  };
 }
