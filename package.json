@@ -1,6 +1,6 @@
 {
   "name": "setu-aa-sdk",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "The official TypeScript library for the Setu Aa SDK API",
   "author": "Setu Aa SDK <aa@setu.co>",
   "types": "dist/index.d.ts",
