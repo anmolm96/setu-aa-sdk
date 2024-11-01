@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as CollectionAPI from './collection';
 
 export class Collection extends APIResource {
   /**
@@ -89,8 +88,10 @@ export interface CollectionRetrieveParams {
   'x-product-instance-id': string;
 }
 
-export namespace Collection {
-  export import MultiConsentResponse = CollectionAPI.MultiConsentResponse;
-  export import CollectionCreateParams = CollectionAPI.CollectionCreateParams;
-  export import CollectionRetrieveParams = CollectionAPI.CollectionRetrieveParams;
+export declare namespace Collection {
+  export {
+    type MultiConsentResponse as MultiConsentResponse,
+    type CollectionCreateParams as CollectionCreateParams,
+    type CollectionRetrieveParams as CollectionRetrieveParams,
+  };
 }

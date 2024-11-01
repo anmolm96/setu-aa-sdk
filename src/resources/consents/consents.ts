@@ -2,8 +2,13 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ConsentsAPI from './consents';
 import * as CollectionAPI from './collection';
+import {
+  Collection,
+  CollectionCreateParams,
+  CollectionRetrieveParams,
+  MultiConsentResponse,
+} from './collection';
 
 export class Consents extends APIResource {
   collection: CollectionAPI.Collection = new CollectionAPI.Collection(this._client);
@@ -690,15 +695,22 @@ export interface ConsentRevokeParams {
   'x-product-instance-id': string;
 }
 
-export namespace Consents {
-  export import ConsentResponseV2 = ConsentsAPI.ConsentResponseV2;
-  export import RevokeConsentResponse = ConsentsAPI.RevokeConsentResponse;
-  export import ConsentCreateParams = ConsentsAPI.ConsentCreateParams;
-  export import ConsentRetrieveParams = ConsentsAPI.ConsentRetrieveParams;
-  export import ConsentFetchStatusParams = ConsentsAPI.ConsentFetchStatusParams;
-  export import ConsentRevokeParams = ConsentsAPI.ConsentRevokeParams;
-  export import Collection = CollectionAPI.Collection;
-  export import MultiConsentResponse = CollectionAPI.MultiConsentResponse;
-  export import CollectionCreateParams = CollectionAPI.CollectionCreateParams;
-  export import CollectionRetrieveParams = CollectionAPI.CollectionRetrieveParams;
+Consents.Collection = Collection;
+
+export declare namespace Consents {
+  export {
+    type ConsentResponseV2 as ConsentResponseV2,
+    type RevokeConsentResponse as RevokeConsentResponse,
+    type ConsentCreateParams as ConsentCreateParams,
+    type ConsentRetrieveParams as ConsentRetrieveParams,
+    type ConsentFetchStatusParams as ConsentFetchStatusParams,
+    type ConsentRevokeParams as ConsentRevokeParams,
+  };
+
+  export {
+    Collection as Collection,
+    type MultiConsentResponse as MultiConsentResponse,
+    type CollectionCreateParams as CollectionCreateParams,
+    type CollectionRetrieveParams as CollectionRetrieveParams,
+  };
 }
