@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as UsersAPI from './users';
 
 export class Users extends APIResource {
   /**
@@ -52,7 +51,6 @@ export interface UserLoginParams {
   client: 'bridge';
 }
 
-export namespace Users {
-  export import TokenAPIResponse = UsersAPI.TokenAPIResponse;
-  export import UserLoginParams = UsersAPI.UserLoginParams;
+export declare namespace Users {
+  export { type TokenAPIResponse as TokenAPIResponse, type UserLoginParams as UserLoginParams };
 }
